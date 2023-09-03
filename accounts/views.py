@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework.generics import CreateAPIView
 
-# Create your views here.
+from .models import Account
+from .serializers import AccountSerializer
+
+
+class AccountView(CreateAPIView):
+    queryset = Account.objects.all()
+    serializer_class = AccountSerializer
