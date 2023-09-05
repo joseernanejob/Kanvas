@@ -45,6 +45,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "drf_spectacular",
 ]
 
 MY_APPS = [
@@ -147,4 +148,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+}
+
+# project_base/settings.py
+REST_FRAMEWORK = {
+    # YOUR SETTINGS
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Kanvas",
+    "DESCRIPTION": "Projeto Final Kanvas",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    # OTHER SETTINGS
 }

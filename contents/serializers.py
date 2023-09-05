@@ -9,5 +9,4 @@ class ContentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Content
-        fields = ["id", "name", "content", "video_url", "course"]
-        read_only_fields = ["course"]
+        fields = ["id", "name", "content", "video_url"]

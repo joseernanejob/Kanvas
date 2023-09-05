@@ -1,12 +1,16 @@
 from django.urls import path
 
 from .views import CourseView, CourseDetailView, CourseStudentView
-from contents.views import ContentView
+from contents.views import ContentView, ContentViewDetail
 
 urlpatterns = [
     path("courses/", CourseView.as_view()),
     path("courses/<str:id_course>/", CourseDetailView.as_view()),
     path("courses/<str:id_course>/contents/", ContentView.as_view()),
+    path(
+        "courses/<str:id_course>/contents/<str:id_content>/",
+        ContentViewDetail.as_view(),
+    ),
     path("courses/<str:id_course>/students/", CourseStudentView.as_view()),
     path("courses/<str:id_course>/contents/", ContentView.as_view()),
     path(
